@@ -17,11 +17,11 @@ BaseUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
 def browser_setup(request):
     global driver
     # Create a Service instance
-    service = Service(ChromeDriverManager().install())
-    chrome_options = Options()
+    # service = Service(ChromeDriverManager().install())
+    chrome_options = webdriver.ChromeOptions()
     chrome_options.add_experimental_option("detach", True)
     # Pass the Service instance to webdriver.Chrome()
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
     request.cls.driver = driver
     request.cls.driver.maximize_window()
 
